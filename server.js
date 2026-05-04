@@ -5,8 +5,8 @@ app.use(express.json());
 
 const loans = [
   { id: 1, status: "approved", amount: 50000, fundedDate: "2025-01-10", loan_id: "1234" },
-  { id: 2, status: "pending", amount: 75000, fundedDate: null, loan_id: "5678" },
-  { id: 3, status: "rejected", amount: 30000, fundedDate: null, loan_id: "9876" }
+  { id: 2, status: "pending", amount: 75000, fundedDate: "2020-09-26", loan_id: "5678" },
+  { id: 3, status: "rejected", amount: 30000, fundedDate: "1999-12-21", loan_id: "9876" }
 ];
 
 // 1) Get All Loans
