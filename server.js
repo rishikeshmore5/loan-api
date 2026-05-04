@@ -9,19 +9,22 @@ const loans = [
     id: 1,
     status: "approved",
     amount: 50000,
-    fundedDate: "2025-01-10"
+    fundedDate: "2025-01-10", 
+    loan_id : "1234"
   },
   {
     id: 2,
     status: "pending",
     amount: 75000,
-    fundedDate: null
+    fundedDate: null, 
+    loan_id:"5678"
   },
   {
     id: 3,
     status: "rejected",
     amount: 30000,
-    fundedDate: null
+    fundedDate: null, 
+    loan_id:"9876"
   }
 ];
 
