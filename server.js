@@ -42,7 +42,7 @@ app.get('/loans', (req, res) => {
 app.get('/loans/:id', (req, res) => {
   const loanId = parseInt(req.params.id);
 
-  const loan = loans.find(l => l.id === loanId);
+  const loan = loans.find(l => l.loan_id === loanId);
 
   if (!loan) {
     return res.status(404).json({
@@ -57,6 +57,24 @@ app.get('/loans/:id', (req, res) => {
   });
 });
 
+// 3) Get Loan by ID v2
+app.get('/loansbyid/:id', (req, res) => {
+  const loanId = parseInt(req.params.id);
+
+  const loan = loans.find(l => l.id === loanId);
+
+  if (!loan) {
+    return res.status(404).json({
+      success: false,
+      message: "Loan not found"
+    });
+  }
+
+  res.json({
+    success: true,
+    data: loan
+  });
+});
 
 // Start server
 const PORT = process.env.PORT || 3000;
