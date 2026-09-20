@@ -41,6 +41,27 @@ app.get('/loans/:identifier', (req, res) => {
   });
 });
 
+// 3) Get Loan by ANI (Phone Number)
+app.get('/loans/ani/:ani', (req, res) => {
+  const { ani } = req.params;
+
+  // Search for a loan matching the ANI
+  const loan = loans.find(l => l.ani === ani);
+
+  if (!loan) {
+    return res.status(404).json({
+      success: false,
+      message: `No loan found for ANI: ${ani}`
+    });
+  }
+
+  res.json({
+    success: true,
+    data: loan
+  });
+});
+
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
